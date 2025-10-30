@@ -1,4 +1,9 @@
-
+import sys, subprocess
+try:
+    import joblib  # noqa
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "joblib==1.4.2"])
+    import joblib  # noqa
 import json
 import os
 from typing import List, Optional
